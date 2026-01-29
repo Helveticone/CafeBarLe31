@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+
+html_code = '''<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#8B4513">
+    <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Café Bar 31">
@@ -21,42 +22,44 @@
         html { height: 100%; }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; 
-            background: #f5f5f5; 
+            background: #ffffff; 
             padding-bottom: 100px; 
             min-height: 100%;
             overscroll-behavior-y: none;
+            color: #000000;
         }
 
         .header { 
-            background: linear-gradient(135deg, #8B4513, #654321); 
-            color: white; 
+            background: #000000; 
+            color: #ffffff; 
             padding: 20px; 
             text-align: center; 
             position: sticky; 
             top: 0; 
             z-index: 100; 
-            border-bottom: 4px solid #FFD700; 
+            border-bottom: 3px solid #000000; 
         }
         .header img { 
             width: 120px; 
             height: 120px; 
-            background: white; 
+            background: #ffffff; 
             border-radius: 50%; 
             margin-bottom: 10px; 
             padding: 5px; 
-            border: 3px solid #FFD700; 
+            border: 3px solid #ffffff; 
             object-fit: cover; 
         }
         .badges { margin-top: 10px; }
         .badge { 
             display: inline-block; 
-            background: #FFD700; 
-            color: #1E3A5F; 
+            background: #ffffff; 
+            color: #000000; 
             padding: 5px 12px; 
             border-radius: 15px; 
             font-size: 12px; 
             font-weight: bold; 
             margin: 2px; 
+            border: 2px solid #000000;
         }
 
         .nav { 
@@ -64,20 +67,21 @@
             overflow-x: auto; 
             gap: 10px; 
             padding: 15px; 
-            background: white; 
+            background: #ffffff; 
             position: sticky; 
-            top: 220px; 
+            top: 200px; 
             z-index: 99; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
             scrollbar-width: none; 
+            border-bottom: 2px solid #000000;
         }
         .nav::-webkit-scrollbar { display: none; }
         .nav button { 
             flex-shrink: 0; 
             padding: 12px 20px; 
-            border: 2px solid #8B4513; 
-            background: white; 
-            color: #8B4513; 
+            border: 2px solid #000000; 
+            background: #ffffff; 
+            color: #000000; 
             border-radius: 25px; 
             font-weight: bold; 
             font-size: 14px; 
@@ -85,8 +89,8 @@
             transition: all 0.3s; 
         }
         .nav button:hover, .nav button.active { 
-            background: #8B4513; 
-            color: white; 
+            background: #000000; 
+            color: #ffffff; 
         }
 
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
@@ -97,45 +101,55 @@
             to { opacity: 1; transform: translateY(0); } 
         }
 
-        h2 { color: #1E3A5F; margin: 20px 0 15px 0; padding-bottom: 10px; border-bottom: 3px solid #FFD700; }
+        h2 { color: #000000; margin: 20px 0 15px 0; padding-bottom: 10px; border-bottom: 3px solid #000000; }
 
         .item { 
-            background: white; 
+            background: #ffffff; 
             border-radius: 12px; 
             padding: 15px; 
             margin-bottom: 12px; 
-            border-left: 4px solid #8B4513; 
+            border: 2px solid #000000; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
         }
-        .item h3 { color: #1E3A5F; margin-bottom: 5px; font-size: 16px; }
-        .item p { color: #666; font-size: 13px; margin-bottom: 8px; }
-        .item .price { color: #8B4513; font-weight: bold; font-size: 18px; }
+        .item h3 { color: #000000; margin-bottom: 5px; font-size: 16px; font-weight: bold; }
+        .item p { color: #333333; font-size: 13px; margin-bottom: 8px; }
+        .item .price { color: #000000; font-weight: bold; font-size: 18px; }
+        .item .description { 
+            color: #666666; 
+            font-size: 12px; 
+            font-style: italic; 
+            margin-top: 5px;
+            padding: 8px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border: 1px solid #000000;
+        }
 
         .qty-control { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
         .qty-control button { 
             width: 35px; 
             height: 35px; 
             border-radius: 50%; 
-            border: none; 
-            background: #8B4513; 
-            color: white; 
+            border: 2px solid #000000; 
+            background: #000000; 
+            color: #ffffff; 
             font-size: 18px; 
             font-weight: bold; 
             cursor: pointer; 
             transition: all 0.2s; 
         }
-        .qty-control button:hover:not(:disabled) { background: #654321; transform: scale(1.1); }
-        .qty-control button:disabled { background: #ccc; cursor: not-allowed; }
-        .qty-control span { font-weight: bold; min-width: 30px; text-align: center; font-size: 16px; }
+        .qty-control button:hover:not(:disabled) { background: #333333; transform: scale(1.1); }
+        .qty-control button:disabled { background: #cccccc; border-color: #cccccc; cursor: not-allowed; }
+        .qty-control span { font-weight: bold; min-width: 30px; text-align: center; font-size: 16px; color: #000000; }
 
         .cart { 
             position: fixed; 
             bottom: 0; 
             left: 0; 
             right: 0; 
-            background: white; 
+            background: #ffffff; 
             padding: 15px 20px; 
-            border-top: 3px solid #FFD700; 
+            border-top: 3px solid #000000; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -143,9 +157,9 @@
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1); 
         }
         .cart button { 
-            background: #25D366; 
-            color: white; 
-            border: none; 
+            background: #000000; 
+            color: #ffffff; 
+            border: 2px solid #000000; 
             padding: 15px 25px; 
             border-radius: 25px; 
             font-weight: bold; 
@@ -153,8 +167,8 @@
             font-size: 16px; 
             transition: all 0.2s; 
         }
-        .cart button:hover:not(:disabled) { background: #128C7E; transform: scale(1.05); }
-        .cart button:disabled { background: #ccc; cursor: not-allowed; }
+        .cart button:hover:not(:disabled) { background: #333333; transform: scale(1.05); }
+        .cart button:disabled { background: #cccccc; border-color: #cccccc; cursor: not-allowed; }
 
         #orderModal { 
             display: none; 
@@ -170,13 +184,14 @@
         }
         #orderModal.show { display: flex; }
         .modal-content { 
-            background: white; 
+            background: #ffffff; 
             width: 100%; 
             max-width: 500px; 
             max-height: 90vh; 
             overflow-y: auto; 
             border-radius: 20px 20px 0 0; 
             padding: 25px; 
+            border-top: 3px solid #000000;
         }
 
         .form-group { margin-bottom: 15px; }
@@ -184,19 +199,21 @@
             display: block; 
             margin-bottom: 5px; 
             font-weight: bold; 
-            color: #1E3A5F; 
+            color: #000000; 
             font-size: 14px; 
         }
         input, textarea, select { 
             width: 100%; 
             padding: 12px; 
-            border: 2px solid #e0e0e0; 
+            border: 2px solid #000000; 
             border-radius: 10px; 
             font-size: 15px; 
             font-family: inherit; 
             -webkit-appearance: none;
+            background: #ffffff;
+            color: #000000;
         }
-        input:focus, textarea:focus, select:focus { outline: none; border-color: #8B4513; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #000000; background: #f5f5f5; }
 
         .checkbox-group { 
             display: flex; 
@@ -207,18 +224,25 @@
         .checkbox-option { 
             display: flex; 
             align-items: center; 
-            padding: 10px; 
-            border: 2px solid #e0e0e0; 
+            padding: 12px; 
+            border: 2px solid #000000; 
             border-radius: 10px; 
             cursor: pointer; 
             transition: all 0.2s;
+            background: #ffffff;
         }
-        .checkbox-option:hover { border-color: #8B4513; }
-        .checkbox-option input { 
-            width: auto; 
-            margin-right: 10px; 
+        .checkbox-option:hover { background: #f5f5f5; }
+        .checkbox-option.selected { 
+            background: #000000; 
+            color: #ffffff;
+        }
+        .checkbox-option.selected .price { color: #ffffff; }
+        .checkbox-option input[type="checkbox"] { 
             width: 20px; 
             height: 20px; 
+            margin-right: 10px; 
+            cursor: pointer;
+            accent-color: #000000;
         }
         .checkbox-option label { 
             display: flex; 
@@ -226,17 +250,44 @@
             width: 100%; 
             cursor: pointer;
             margin: 0;
+            color: inherit;
         }
-        .checkbox-option .price { color: #8B4513; font-weight: bold; }
+        .checkbox-option .price { color: #000000; font-weight: bold; }
+
+        .radio-group { display: flex; gap: 15px; margin: 15px 0; }
+        .radio-option { 
+            flex: 1; 
+            padding: 15px; 
+            border: 2px solid #000000; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            text-align: center; 
+            transition: all 0.2s; 
+            background: #ffffff;
+        }
+        .radio-option:hover { background: #f5f5f5; }
+        .radio-option.selected { 
+            background: #000000; 
+            color: #ffffff;
+        }
+        .radio-option label { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            font-weight: normal; 
+            color: inherit;
+        }
+        .radio-option input { width: auto; margin-right: 8px; cursor: pointer; }
 
         .datetime-row { display: flex; gap: 10px; }
         .datetime-row > div { flex: 1; }
 
         .btn-primary { 
             width: 100%; 
-            background: #8B4513; 
-            color: white; 
-            border: none; 
+            background: #000000; 
+            color: #ffffff; 
+            border: 2px solid #000000; 
             padding: 16px; 
             border-radius: 25px; 
             font-size: 16px; 
@@ -245,7 +296,7 @@
             cursor: pointer; 
             transition: all 0.2s; 
         }
-        .btn-primary:hover { background: #654321; transform: scale(1.02); }
+        .btn-primary:hover { background: #333333; transform: scale(1.02); }
         .hidden { display: none !important; }
         
         .install-prompt {
@@ -253,8 +304,8 @@
             bottom: 80px;
             left: 50%;
             transform: translateX(-50%);
-            background: #1E3A5F;
-            color: white;
+            background: #000000;
+            color: #ffffff;
             padding: 12px 20px;
             border-radius: 25px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -264,15 +315,16 @@
             gap: 10px;
             font-size: 14px;
             animation: slideUp 0.3s ease;
+            border: 2px solid #000000;
         }
         @keyframes slideUp {
             from { transform: translateX(-50%) translateY(100%); opacity: 0; }
             to { transform: translateX(-50%) translateY(0); opacity: 1; }
         }
         .install-prompt button {
-            background: #FFD700;
-            color: #1E3A5F;
-            border: none;
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #000000;
             padding: 8px 16px;
             border-radius: 15px;
             font-weight: bold;
@@ -280,13 +332,36 @@
         }
         
         .info-box {
-            background: #FFF8DC;
-            border-left: 4px solid #FFD700;
+            background: #ffffff;
+            border: 2px solid #000000;
             padding: 12px;
             margin-bottom: 15px;
             border-radius: 8px;
             font-size: 13px;
-            color: #654321;
+            color: #000000;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #000000;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 5px;
+        }
+        
+        .frites-options {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border: 1px solid #000000;
+        }
+        .frites-options.show {
+            display: block;
         }
     </style>
 </head>
@@ -303,7 +378,7 @@
 
     <div class="nav">
         <button class="active" onclick="showCategory('burgers', this)">🍔 Burgers</button>
-        <button onclick="showCategory('menus', this)">🍟 Menus</button>
+        <button onclick="showCategory('menus', this)">🎓 Menu Étudiant</button>
         <button onclick="showCategory('desserts', this)">🍰 Desserts</button>
     </div>
 
@@ -315,8 +390,8 @@
 
     <div class="cart">
         <div>
-            <small id="cart-count">0 article</small><br>
-            <strong>Total: <span id="cart-total" style="color:#8B4513;font-size:20px;">0.00</span> CHF</strong>
+            <small id="cart-count" style="color:#000000;">0 article</small><br>
+            <strong style="color:#000000;">Total: <span id="cart-total" style="color:#000000;font-size:20px;">0.00</span> CHF</strong>
         </div>
         <button onclick="openOrder()" id="order-btn" disabled>📱 Commander</button>
     </div>
@@ -328,8 +403,8 @@
 
     <div id="orderModal" onclick="if(event.target.id=='orderModal')closeOrder()">
         <div class="modal-content">
-            <h2>📝 Votre commande</h2>
-            <div id="order-list" style="background:#f5f5f5;padding:15px;border-radius:10px;margin:15px 0;max-height:200px;overflow-y:auto;"></div>
+            <h2 style="color:#000000;border-bottom:2px solid #000000;padding-bottom:10px;">📝 Votre commande</h2>
+            <div id="order-list" style="background:#f5f5f5;padding:15px;border-radius:10px;margin:15px 0;max-height:200px;overflow-y:auto;border:1px solid #000000;"></div>
 
             <div class="info-box">
                 <strong>📍 À emporter uniquement</strong><br>
@@ -366,6 +441,7 @@
     </div>
 
     <script>
+        // Données du menu Café Bar le 31
         var menuData = {
             burgers: [
                 {n: "Smash Burger M", d: "1 steak Smash", p: 11.00},
@@ -373,8 +449,7 @@
                 {n: "Smash Burger XL", d: "3 steaks Smash", p: 15.00}
             ],
             menus: [
-                {n: "Menu Étudiant M", d: "Burger M + frites + soft 3dl (sur présentation carte étudiant)", p: 14.00},
-                {n: "Menu Complet +5 CHF", d: "Ajoutez frites + soft 3dl à votre burger", p: 5.00}
+                {n: "Menu Étudiant M", d: "Burger M + frites + soft 3dl (sur présentation carte étudiant)", p: 14.00}
             ],
             desserts: [
                 {n: "Tiramisu Classique", d: "Le classique italien", p: 6.00},
@@ -390,31 +465,35 @@
         ];
 
         var cart = {};
-        var cartSupplements = {};
+        var cartSupplements = {}; // {itemId: [supp1, supp2, ...]}
+        var cartMenuOption = {}; // {itemId: {menu: true/false, frites: 'pomme'/'patate'}}
         var deferredPrompt;
 
         function init() {
+            // Générer les burgers avec suppléments et option menu
             var burgersHtml = '<div class="info-box">🥩 Chaque burger inclut: cheddar, oignons caramélisés, sauce maison</div>';
             for (var i = 0; i < menuData.burgers.length; i++) {
                 var it = menuData.burgers[i];
                 var id = 'burgers-' + i;
-                burgersHtml += generateItemHtml(id, it, true);
+                burgersHtml += generateBurgerHtml(id, it);
             }
             document.getElementById('burgers').innerHTML = burgersHtml;
 
-            var menusHtml = '';
+            // Générer le menu étudiant (sans menu complet)
+            var menusHtml = '<div class="info-box">🎓 Sur présentation de votre carte étudiante uniquement</div>';
             for (var i = 0; i < menuData.menus.length; i++) {
                 var it = menuData.menus[i];
                 var id = 'menus-' + i;
-                menusHtml += generateItemHtml(id, it, false);
+                menusHtml += generateItemHtml(id, it);
             }
             document.getElementById('menus').innerHTML = menusHtml;
 
+            // Générer les desserts
             var dessertsHtml = '';
             for (var i = 0; i < menuData.desserts.length; i++) {
                 var it = menuData.desserts[i];
                 var id = 'desserts-' + i;
-                dessertsHtml += generateItemHtml(id, it, false);
+                dessertsHtml += generateItemHtml(id, it);
             }
             document.getElementById('desserts').innerHTML = dessertsHtml;
 
@@ -438,32 +517,68 @@
             });
         }
         
-        function generateItemHtml(id, it, withSupplements) {
+        function generateBurgerHtml(id, it) {
             var html = '<div class="item">';
             html += '<h3>' + it.n + '</h3>';
             html += '<p>' + it.d + '</p>';
             html += '<div class="price">' + it.p.toFixed(2) + ' CHF</div>';
             
-            if (withSupplements) {
-                html += '<div style="margin-top:10px;font-size:12px;color:#666;"><strong>Suppléments disponibles:</strong></div>';
-                html += '<div class="checkbox-group">';
-                for (var s = 0; s < supplements.length; s++) {
-                    var sup = supplements[s];
-                    html += '<div class="checkbox-option" onclick="toggleSupplement(\'' + id + '\', \'' + sup.id + '\')">';
-                    html += '<input type="checkbox" id="' + id + '-' + sup.id + '" onchange="updateSupplement(\'' + id + '\', \'' + sup.id + '\')">';
-                    html += '<label for="' + id + '-' + sup.id + '">';
-                    html += '<span>' + sup.n + '</span>';
-                    html += '<span class="price">+' + sup.p.toFixed(2) + ' CHF</span>';
-                    html += '</label>';
-                    html += '</div>';
-                }
+            // Option Menu +5 CHF
+            html += '<div class="section-title">🍟 Menu (+5 CHF)</div>';
+            html += '<div class="checkbox-option" onclick="toggleMenuOption(\\'' + id + '\\')" id="menu-option-' + id + '">';
+            html += '<input type="checkbox" id="' + id + '-menu" onchange="updateMenuOption(\\'' + id + '\\')">';
+            html += '<label for="' + id + '-menu">';
+            html += '<span>Ajouter Menu (+5 CHF)</span>';
+            html += '<span class="price">Inclut frites + soft 3dl</span>';
+            html += '</label>';
+            html += '</div>';
+            
+            // Choix des frites (caché par défaut)
+            html += '<div class="frites-options" id="frites-options-' + id + '">';
+            html += '<div style="font-weight:bold;margin-bottom:8px;">Choix des frites:</div>';
+            html += '<div class="radio-group">';
+            html += '<div class="radio-option" onclick="selectFrites(\\'' + id + '\\',  + pomme)\\'' id="frites-pomme-' + id + '">';
+            html += '<label><input type="radio" name="frites-' + id + '" value="pomme" onchange="updateFrites(\\'' + id + '\\',  + pomme)\\''> 🥔 Pommes de terre</label>';
+            html += '</div>';
+            html += '<div class="radio-option" onclick="selectFrites(\\'' + id + '\\',  + patate)\\'' id="frites-patate-' + id + '">';
+            html += '<label><input type="radio" name="frites-' + id + '" value="patate" onchange="updateFrites(\\'' + id + '\\',  + patate)\\''> 🍠 Patates douces</label>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+            
+            // Suppléments
+            html += '<div class="section-title">➕ Suppléments (facultatifs)</div>';
+            html += '<div class="checkbox-group">';
+            for (var s = 0; s < supplements.length; s++) {
+                var sup = supplements[s];
+                html += '<div class="checkbox-option" onclick="toggleSupplement(\\'' + id + '\\', \\'' + sup.id + '\\')" id="supp-' + id + '-' + sup.id + '">';
+                html += '<input type="checkbox" id="' + id + '-' + sup.id + '" onchange="updateSupplement(\\'' + id + '\\', \\'' + sup.id + '\\')">';
+                html += '<label for="' + id + '-' + sup.id + '">';
+                html += '<span>' + sup.n + '</span>';
+                html += '<span class="price">+' + sup.p.toFixed(2) + ' CHF</span>';
+                html += '</label>';
                 html += '</div>';
             }
+            html += '</div>';
             
             html += '<div class="qty-control">';
-            html += '<button onclick="updateQty(\'' + id + '\', -1)" disabled id="btn-min-' + id + '">-</button>';
+            html += '<button onclick="updateQty(\\'' + id + '\\', -1)" disabled id="btn-min-' + id + '">-</button>';
             html += '<span id="qty-' + id + '">0</span>';
-            html += '<button onclick="updateQty(\'' + id + '\', 1)" id="btn-plus-' + id + '">+</button>';
+            html += '<button onclick="updateQty(\\'' + id + '\\', 1)" id="btn-plus-' + id + '">+</button>';
+            html += '</div></div>';
+            return html;
+        }
+        
+        function generateItemHtml(id, it) {
+            var html = '<div class="item">';
+            html += '<h3>' + it.n + '</h3>';
+            html += '<p>' + it.d + '</p>';
+            html += '<div class="price">' + it.p.toFixed(2) + ' CHF</div>';
+            
+            html += '<div class="qty-control">';
+            html += '<button onclick="updateQty(\\'' + id + '\\', -1)" disabled id="btn-min-' + id + '">-</button>';
+            html += '<span id="qty-' + id + '">0</span>';
+            html += '<button onclick="updateQty(\\'' + id + '\\', 1)" id="btn-plus-' + id + '">+</button>';
             html += '</div></div>';
             return html;
         }
@@ -491,6 +606,56 @@
             window.scrollTo(0, 0);
         }
 
+        function toggleMenuOption(itemId) {
+            var checkbox = document.getElementById(itemId + '-menu');
+            checkbox.checked = !checkbox.checked;
+            updateMenuOption(itemId);
+        }
+        
+        function updateMenuOption(itemId) {
+            var checkbox = document.getElementById(itemId + '-menu');
+            var fritesDiv = document.getElementById('frites-options-' + itemId);
+            var menuOption = document.getElementById('menu-option-' + itemId);
+            
+            if (!cartMenuOption[itemId]) cartMenuOption[itemId] = {menu: false, frites: null};
+            
+            if (checkbox.checked) {
+                cartMenuOption[itemId].menu = true;
+                fritesDiv.classList.add('show');
+                menuOption.classList.add('selected');
+            } else {
+                cartMenuOption[itemId].menu = false;
+                cartMenuOption[itemId].frites = null;
+                fritesDiv.classList.remove('show');
+                menuOption.classList.remove('selected');
+                // Décocher les frites
+                document.querySelectorAll('input[name="frites-' + itemId + '"]').forEach(function(el) {
+                    el.checked = false;
+                });
+                document.getElementById('frites-pomme-' + itemId).classList.remove('selected');
+                document.getElementById('frites-patate-' + itemId).classList.remove('selected');
+            }
+            updateCartDisplay();
+        }
+        
+        function selectFrites(itemId, type) {
+            var radio = document.querySelector('input[name="frites-' + itemId + '"][value="' + type + '"]');
+            radio.checked = true;
+            updateFrites(itemId, type);
+        }
+        
+        function updateFrites(itemId, type) {
+            if (!cartMenuOption[itemId]) cartMenuOption[itemId] = {menu: false, frites: null};
+            cartMenuOption[itemId].frites = type;
+            
+            // Mettre à jour l'affichage
+            document.getElementById('frites-pomme-' + itemId).classList.remove('selected');
+            document.getElementById('frites-patate-' + itemId).classList.remove('selected');
+            document.getElementById('frites-' + type + '-' + itemId).classList.add('selected');
+            
+            updateCartDisplay();
+        }
+
         function toggleSupplement(itemId, supId) {
             var checkbox = document.getElementById(itemId + '-' + supId);
             checkbox.checked = !checkbox.checked;
@@ -499,14 +664,18 @@
         
         function updateSupplement(itemId, supId) {
             var checkbox = document.getElementById(itemId + '-' + supId);
+            var suppOption = document.getElementById('supp-' + itemId + '-' + supId);
+            
             if (!cartSupplements[itemId]) cartSupplements[itemId] = [];
             
             if (checkbox.checked) {
                 if (cartSupplements[itemId].indexOf(supId) === -1) {
                     cartSupplements[itemId].push(supId);
                 }
+                suppOption.classList.add('selected');
             } else {
                 cartSupplements[itemId] = cartSupplements[itemId].filter(function(id) { return id !== supId; });
+                suppOption.classList.remove('selected');
             }
             updateCartDisplay();
         }
@@ -522,9 +691,28 @@
             document.getElementById('btn-plus-' + id).disabled = (cart[id] >= 10);
             
             if (cart[id] === 0) {
+                // Réinitialiser toutes les options
                 cartSupplements[id] = [];
-                var checkboxes = document.querySelectorAll('[id^="' + id + '-"]');
-                checkboxes.forEach(function(cb) { cb.checked = false; });
+                cartMenuOption[id] = {menu: false, frites: null};
+                
+                // Décocher tout
+                var checkboxes = document.querySelectorAll('#' + id + '-' + 'menu, [id^="' + id + '-"][type="checkbox"]');
+                checkboxes.forEach(function(cb) { 
+                    cb.checked = false; 
+                    var parent = cb.closest('.checkbox-option');
+                    if (parent) parent.classList.remove('selected');
+                });
+                
+                // Cacher options frites
+                var fritesDiv = document.getElementById('frites-options-' + id);
+                if (fritesDiv) fritesDiv.classList.remove('show');
+                
+                // Décocher frites
+                document.querySelectorAll('input[name="frites-' + id + '"]').forEach(function(el) {
+                    el.checked = false;
+                });
+                document.getElementById('frites-pomme-' + id).classList.remove('selected');
+                document.getElementById('frites-patate-' + id).classList.remove('selected');
             }
             
             updateCartDisplay();
@@ -540,6 +728,12 @@
                     var item = menuData[cat][idx];
                     var itemTotal = item.p * cart[id];
                     
+                    // Ajouter le menu (+5 CHF)
+                    if (cartMenuOption[id] && cartMenuOption[id].menu) {
+                        itemTotal += 5.00 * cart[id];
+                    }
+                    
+                    // Ajouter les suppléments
                     if (cartSupplements[id]) {
                         for (var s = 0; s < cartSupplements[id].length; s++) {
                             var supId = cartSupplements[id][s];
@@ -570,7 +764,7 @@
         function updateTimes() {
             var dateInput = document.getElementById('delivery-date').value;
             var timeSelect = document.getElementById('delivery-time');
-            timeSelect.innerHTML = '<option value="">Choisir l\'heure</option>';
+            timeSelect.innerHTML = '<option value="">Choisir l\\'heure</option>';
             if (!dateInput) return;
             var selectedDate = new Date(dateInput);
             var now = new Date();
@@ -616,30 +810,37 @@
                     var idx = parseInt(parts[1]);
                     var it = menuData[cat][idx];
                     var itemTotal = it.p * cart[id];
-                    var supplText = '';
+                    var details = [];
                     
+                    // Menu
+                    if (cartMenuOption[id] && cartMenuOption[id].menu) {
+                        itemTotal += 5.00 * cart[id];
+                        var fritesType = cartMenuOption[id].frites === 'patate' ? 'patates douces' : 'pommes de terre';
+                        details.push('Menu (+5 CHF) avec frites ' + fritesType);
+                    }
+                    
+                    // Suppléments
                     if (cartSupplements[id] && cartSupplements[id].length > 0) {
-                        supplText = ' (';
+                        var supps = [];
                         for (var s = 0; s < cartSupplements[id].length; s++) {
                             var supId = cartSupplements[id][s];
                             var sup = supplements.find(function(x) { return x.id === supId; });
                             if (sup) {
                                 itemTotal += sup.p * cart[id];
-                                supplText += sup.n;
-                                if (s < cartSupplements[id].length - 1) supplText += ', ';
+                                supps.push(sup.n);
                             }
                         }
-                        supplText += ')';
+                        if (supps.length > 0) details.push('Suppléments: ' + supps.join(', '));
                     }
                     
                     total += itemTotal;
                     html += '<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #ddd;">';
-                    html += '<span>' + cart[id] + '× ' + it.n + supplText + '</span>';
+                    html += '<span>' + cart[id] + '× ' + it.n + (details.length > 0 ? '<br><small>' + details.join('<br>') + '</small>' : '') + '</span>';
                     html += '<span>' + itemTotal.toFixed(2) + ' CHF</span></div>';
                 }
             }
             
-            html += '<div style="font-weight:bold;color:#8B4513;font-size:18px;margin-top:10px;padding-top:10px;border-top:2px solid #8B4513;display:flex;justify-content:space-between;">';
+            html += '<div style="font-weight:bold;color:#000000;font-size:18px;margin-top:10px;padding-top:10px;border-top:2px solid #000000;display:flex;justify-content:space-between;">';
             html += '<span>TOTAL</span><span>' + total.toFixed(2) + ' CHF</span></div>';
             list.innerHTML = html;
             document.getElementById('orderModal').classList.add('show');
@@ -657,7 +858,7 @@
             var notes = document.getElementById('notes').value.trim();
 
             if (!name || !phone) { alert('Veuillez remplir le nom et téléphone'); return; }
-            if (!date || !time) { alert('Veuillez choisir la date et l\'heure de retrait'); return; }
+            if (!date || !time) { alert('Veuillez choisir la date et l\\'heure de retrait'); return; }
 
             var msg = '🍔 *NOUVELLE COMMANDE CAFE BAR LE 31* %0A%0A';
             msg += '👤 *Client:* ' + encodeURIComponent(name) + '%0A';
@@ -678,6 +879,14 @@
                     
                     msg += '• ' + cart[id] + '× ' + it.n;
                     
+                    // Menu
+                    if (cartMenuOption[id] && cartMenuOption[id].menu) {
+                        itemTotal += 5.00 * cart[id];
+                        var fritesType = cartMenuOption[id].frites === 'patate' ? 'patates douces' : 'pommes de terre';
+                        msg += ' + Menu (frites ' + fritesType + ' + soft)';
+                    }
+                    
+                    // Suppléments
                     if (cartSupplements[id] && cartSupplements[id].length > 0) {
                         msg += ' avec ';
                         for (var s = 0; s < cartSupplements[id].length; s++) {
@@ -702,11 +911,21 @@
 
             window.open('https://wa.me/41783280311?text=' + msg, '_blank');
 
+            // Reset
             cart = {};
             cartSupplements = {};
+            cartMenuOption = {};
             document.querySelectorAll('.qty-control span').forEach(function(el) { el.textContent = '0'; });
             document.querySelectorAll('.qty-control button:first-child').forEach(function(el) { el.disabled = true; });
-            document.querySelectorAll('input[type="checkbox"]').forEach(function(el) { el.checked = false; });
+            document.querySelectorAll('input[type="checkbox"]').forEach(function(el) { 
+                el.checked = false; 
+                var parent = el.closest('.checkbox-option');
+                if (parent) parent.classList.remove('selected');
+            });
+            document.querySelectorAll('.frites-options').forEach(function(el) { el.classList.remove('show'); });
+            document.querySelectorAll('.radio-option').forEach(function(el) { el.classList.remove('selected'); });
+            document.querySelectorAll('input[type="radio"]').forEach(function(el) { el.checked = false; });
+            
             updateCartDisplay();
             closeOrder();
             document.getElementById('name').value = '';
@@ -718,4 +937,18 @@
         init();
     </script>
 </body>
-</html>
+</html>'''
+
+# Sauvegarder
+output_dir = '/mnt/kimi/output/cafebar31'
+import os
+os.makedirs(output_dir, exist_ok=True)
+
+with open(f'{output_dir}/index.html', 'w', encoding='utf-8') as f:
+    f.write(html_code)
+
+print("✅ Code noir et blanc créé avec:")
+print("  - Suppléments fonctionnels (cases à cocher)")
+print("  - Option Menu +5 CHF avec choix de frites")
+print("  - Page Menu simplifiée (sans Menu Complet)")
+print("  - Design 100% noir et blanc")
